@@ -1,0 +1,23 @@
+dataset:
+  raw_table: data/raw/land_use_dataset.csv
+  unified_table: data/unified_land_use_dataset.csv
+  raw_feature_table: data/raw/text_features.csv
+  rebuilt_feature_table: data/text_features_rebuilt.csv
+
+splits:
+  heldout_split: splits/heldout_split_ids.csv
+  repeated_stratified_kfold: splits/repeated_stratified_kfold_ids.csv
+  heldout_seed: 42
+  heldout_test_fraction: 0.2
+  kfold_seed_start: 42
+  n_splits: 5
+  n_repeats: 3
+
+evaluation:
+  default_threshold: 0.5
+  required_prediction_columns:
+    - sample_id
+    - label
+  accepted_prediction_columns:
+    - predicted_label
+    - probability
